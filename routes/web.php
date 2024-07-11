@@ -8,3 +8,5 @@ Route::get('/', function () {
 });
 
 Route::resource('posts', PostController::class);
+
+Route::get('posts/{post}/delete', [PostController::class, 'confirmDelete'])->name('posts.delete');

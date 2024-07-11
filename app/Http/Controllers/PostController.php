@@ -20,25 +20,36 @@ class PostController extends Controller
         return view('posts.show', compact('post'));
     }
 
-    public function edit(string $id) {
-        //
+    public function edit(Post $post) {
+        return view('posts.edit', compact('post'));
     }
 
-    public function update(Request $request, string $id) {
+    public function update(Request $request, Post $post) {
         $request->validate([
-            'title' => 'required',
-            'content' => 'required',
-        ]);
+                    'title' => 'required',
+                    'content' => 'required',
+                ]);
+
+         $post->update($request->all());
+         return redirect()->route('posts.show', $post->id);
+    }
+
+    public function store(Request $request) {
+        $request->validate([
+                    'title' => 'required',
+                    'content' => 'required',
+                ]);
 
         Post::create($request->all());
         return redirect()->route('posts.index');
     }
 
-    public function store(Request $request) {
-        //
+    public function confirmDelete(Post $post) {
+        return view('posts.delete', compact('post'));
     }
 
-    public function destroy(string $id) {
-        //
+    public function destroy(Post $post) {
+        $post->delete();
+        return redirect()->route('posts.index');
     }
 }
