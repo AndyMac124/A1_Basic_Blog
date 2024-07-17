@@ -8,6 +8,21 @@
 
 ---
 
+### Configuring and running from ZIP file
+1. Unzip the provided folder and open in an editor of your choice.
+2. Configure and add the .env file, there is an example in .env.example.
+3. Set up the database connection in the .env file.
+4. Run `npm install`.
+5. Run `composer install`.
+6. I also recommend running `php artisan migrate` to confirm the migration.
+7. Start your database and server of choice.
+8. Run `npm run dev`.
+9. Run `php artisan serve`.
+
+*Note: Under the database directory you will find the PostFactory factory and PostSeeder seeder if needed.*
+
+---
+
 ## Report
 
 ### Approach:
