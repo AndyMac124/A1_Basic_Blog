@@ -12,6 +12,9 @@
             <label for="content">Content</label>
             <textarea name="content" class="form-control" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="d-flex">
+            <a href="{{ url()->previous() }}" class="btn btn-outline-secondary">Back</a>
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+        </div>
     </form>
 @endsection
