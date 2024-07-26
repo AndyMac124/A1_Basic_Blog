@@ -7,6 +7,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('posts', PostController::class);
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('posts', PostController::class);
+    Route::get('posts/{post}/delete', [PostController::class, 'confirmDelete'])->name('posts.delete');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
 
-Route::get('posts/{post}/delete', [PostController::class, 'confirmDelete'])->name('posts.delete');
+Auth::routes();
+

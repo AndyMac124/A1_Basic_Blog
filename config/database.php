@@ -15,7 +15,7 @@ return [
     | is explicitly specified when you execute a query / statement.
     |
     */
-
+    //'default' => env('DB_CONNECTION', 'mysql'),
     'default' => env('MONGO_DB_CONNECTION', 'mongodb'),
 
     /*
