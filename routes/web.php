@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminPostController;
@@ -15,8 +16,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/home', [PostController::class, 'index'])->name('home');
 });
 
-Route::prefix('admin')->middleware(['auth', 'admin'])->group(function() {
-    Route::get('/', [AdminPostController::class, 'index'])->name('admin.dashboard');
+Route::prefix('admin')->middleware(['auth'])->group(function() {
+    Route::get('/', [AdminPostController::class, 'index'])->name('admin.dashboard')->middleware(AdminMiddleware::Class);
     Route::resource('posts', AdminPostController::class, ['as' => 'admin']);
     Route::get('posts/{post}/delete', [AdminPostController::class, 'confirmDelete'])->name('admin.posts.delete');
     Route::resource('users', AdminUserController::class, ['as' => 'admin']);

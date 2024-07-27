@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 class AdminUserController extends Controller
@@ -12,7 +11,7 @@ class AdminUserController extends Controller
     // Show all users
     public function index() {
         $users = User::all();
-        return view('admin.users.index', compact('users'));
+        return view('admin.users.listUsers', compact('users'));
     }
 
     // Create user
