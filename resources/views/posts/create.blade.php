@@ -16,5 +16,6 @@
             <a href="{{ url()->previous() }}" class="btn btn-outline-secondary">Back</a>
             <button type="submit" class="btn btn-outline-primary">Submit</button>
         </div>
+        <input type="hidden" name="author_name" value="{{ Auth::user()->name }}">
     </form>
 @endsection
