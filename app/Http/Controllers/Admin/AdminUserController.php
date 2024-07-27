@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
-class UserController extends Controller
+class AdminUserController extends Controller
 {
     // Show all users
     public function index() {
@@ -20,12 +21,12 @@ class UserController extends Controller
     }
 
     // Show user
-    public function show(Post $post) {
+    public function show(User $user) {
         return view('admin.users.show', compact('user'));
     }
 
     // Edit user
-    public function edit(Post $post) {
+    public function edit(User $user) {
         return view('admin.users.edit', compact('user'));
     }
 
@@ -54,7 +55,7 @@ class UserController extends Controller
     }
 
     // Remove user
-    public function destroyUser(Post $post) {
+    public function destroyUser(User $user) {
         $user->delete();
         return redirect()->route('admin.users.index');
     }
