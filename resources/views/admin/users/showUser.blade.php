@@ -1,20 +1,18 @@
 @extends('admin.admin')
 
 @section('content')
-    <h1>View User</h1>
-    <form action="{{ route('posts.store') }}" method="POST">
+    <h1>User Details</h1>
+    <h3 class="fw-medium">Name: {{ $user->name }}</h3>
+    <h4>Email: {{ $user->email }}</h4>
+    <h4>User Role: {{ $user->user_role }}</h4>
+    <h4>Updated at: {{ $user->updated_at }}</h4>
+    <h4>Created at: {{ $user->created_at }}</h4>
+    <a href="{{ route('admin.users.index') }}" class="btn btn-outline-secondary">Back</a>
+    <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-outline-warning">Edit</a>
+    <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST">
         @csrf
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" name="title" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="content">Content</label>
-            <textarea name="content" class="form-control" required></textarea>
-        </div>
-        <div class="d-flex">
-            <a href="{{ url()->previous() }}" class="btn btn-outline-secondary">Back</a>
-            <button type="submit" class="btn btn-outline-primary">Submit</button>
-        </div>
+        @method('DELETE')
+        <button type="submit" class="btn btn-outline-danger">Delete</button>
     </form>
+
 @endsection

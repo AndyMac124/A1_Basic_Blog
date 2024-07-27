@@ -5,13 +5,15 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class AdminPostController extends Controller
 {
     public function index() {
-        $posts = Post::all();
-        return view('admin.dashboard');
+        $recentUsers = User::orderBy('created_at', 'desc')->take(10)->get();
+        $recentPosts = Post::orderBy('created_at', 'desc')->take(10)->get();
+        return view('admin.dashboard', compact('recentUsers', 'recentPosts'));
     }
 
     public function create() {

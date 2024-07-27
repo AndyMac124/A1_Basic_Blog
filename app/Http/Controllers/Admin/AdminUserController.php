@@ -16,17 +16,17 @@ class AdminUserController extends Controller
 
     // Create user
     public function create() {
-        return view('admin.users.create');
+        return view('admin.users.createUser');
     }
 
     // Show user
     public function show(User $user) {
-        return view('admin.users.show', compact('user'));
+        return view('admin.users.showUser', compact('user'));
     }
 
     // Edit user
     public function edit(User $user) {
-        return view('admin.users.edit', compact('user'));
+        return view('admin.users.editUser', compact('user'));
     }
 
     // Update user
@@ -34,7 +34,8 @@ class AdminUserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'password'=> 'required'
+            'password' => 'nullable|min:8',
+            'user_role' => 'required|in:admin,author,user',
         ]);
 
         $user->update($request->all());
@@ -46,7 +47,8 @@ class AdminUserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'password'=> 'required'
+            'password'=> 'required',
+            'user_role' => 'required|in:admin,author,user',
         ]);
 
         User::create($request->all());
@@ -54,7 +56,7 @@ class AdminUserController extends Controller
     }
 
     // Remove user
-    public function destroyUser(User $user) {
+    public function destroy(User $user) {
         $user->delete();
         return redirect()->route('admin.users.index');
     }

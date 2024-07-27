@@ -176,6 +176,10 @@
   <symbol id="file-earmark" viewBox="0 0 16 16">
     <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
   </symbol>
+  <symbol id="file-earmark-plus" viewBox="0 0 16 16">
+      <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
+      <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+  </symbol>
   <symbol id="file-earmark-text" viewBox="0 0 16 16">
     <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
     <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
@@ -196,6 +200,10 @@
   <symbol id="people" viewBox="0 0 16 16">
     <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>
   </symbol>
+  <symbol id="addPerson" viewBox="0 0 16 16">
+      <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8 9a5.978 5.978 0 0 0-4.528 2.032C2.88 11.926 2 12.87 2 14v1h12v-1c0-1.13-.88-2.074-1.472-2.968A5.978 5.978 0 0 0 8 9z"/>
+      <path d="M13.5 3a.5.5 0 0 1 .5.5v1.5h1.5a.5.5 0 0 1 0 1h-1.5v1.5a.5.5 0 0 1-1 0v-1.5h-1.5a.5.5 0 0 1 0-1h1.5V3.5a.5.5 0 0 1 .5-.5z"/>
+    </symbol>
   <symbol id="plus-circle" viewBox="0 0 16 16">
     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
@@ -240,39 +248,39 @@
         <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
+              <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="{{ route('admin.dashboard') }}">
                 <svg class="bi"><use xlink:href="#house-fill"/></svg>
                 Dashboard
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <svg class="bi"><use xlink:href="#file-earmark"/></svg>
+              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('admin.posts.listPosts') }}">
+                <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
                 View all Posts
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <svg class="bi"><use xlink:href="#cart"/></svg>
+              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('admin.users.index') }}">
+                <svg class="bi"><use xlink:href="#people"/></svg>
                 View all Users
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <svg class="bi"><use xlink:href="#people"/></svg>
+              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('posts.index') }}">
+                <svg class="bi"><use xlink:href="#door-closed"/></svg>
                 Leave Dashboard
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <svg class="bi"><use xlink:href="#graph-up"/></svg>
-                Reports
+              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('admin.users.create') }}">
+                <svg class="bi"><use xlink:href="#addPerson"/></svg>
+                Add New User
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <svg class="bi"><use xlink:href="#puzzle"/></svg>
-                Integrations
+              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('admin.posts.create') }}">
+                <svg class="bi"><use xlink:href="#file-earmark"/></svg>
+                Create New Post
               </a>
             </li>
           </ul>
@@ -285,27 +293,24 @@
           </h6>
           <ul class="nav flex-column mb-auto">
             <li class="nav-item">
+              @yield('actionLink')
+            </li>
+            <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
-                Current month
+                NULL
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
-                Last quarter
+                NULL
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
-                Social engagement
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
-                Year-end sale
+                NULL
               </a>
             </li>
           </ul>
@@ -316,13 +321,13 @@
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#gear-wide-connected"/></svg>
-                Settings
+                NULL
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#door-closed"/></svg>
-                Sign out
+                NULL
               </a>
             </li>
           </ul>
