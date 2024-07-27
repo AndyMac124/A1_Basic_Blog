@@ -11,19 +11,19 @@ class AdminPostController extends Controller
 {
     public function index() {
         $posts = Post::all();
-        return view('admin.admin');
+        return view('admin.dashboard');
     }
 
     public function create() {
-        return view('admin.posts.create');
+        return view('admin.posts.createPost');
     }
 
     public function show(Post $post) {
-        return view('admin.posts.show', compact('post'));
+        return view('admin.posts.showPost');
     }
 
     public function edit(Post $post) {
-        return view('admin.posts.edit', compact('post'));
+        return view('admin.posts.editPost');
     }
 
     public function update(Request $request, Post $post) {
@@ -33,7 +33,7 @@ class AdminPostController extends Controller
                 ]);
 
          $post->update($request->all());
-         return redirect()->route('admin.posts.show', $post->id);
+         return redirect()->route('admin.posts.showPost', $post->id);
     }
 
     public function store(Request $request) {
@@ -47,11 +47,17 @@ class AdminPostController extends Controller
     }
 
     public function confirmDelete(Post $post) {
-        return view('admin.posts.delete', compact('post'));
+        return view('admin.posts.deletePost');
     }
 
     public function destroy(Post $post) {
         $post->delete();
-        return redirect()->route('admin.posts.index');
+        return redirect()->route('admin.posts.listPosts');
     }
+
+    public function viewPosts() {
+        $posts = Post::all();
+        return view('admin.posts.listPosts');
+    }
+
 }
