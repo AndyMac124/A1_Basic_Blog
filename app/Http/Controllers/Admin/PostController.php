@@ -11,19 +11,19 @@ class PostController extends Controller
 {
     public function index() {
         $posts = Post::all();
-        return view('posts.index', compact('posts'));
+        return view('admin.posts.index', compact('posts'));
     }
 
     public function create() {
-        return view('posts.create');
+        return view('admin.posts.create');
     }
 
     public function show(Post $post) {
-        return view('posts.show', compact('post'));
+        return view('admin.posts.show', compact('post'));
     }
 
     public function edit(Post $post) {
-        return view('posts.edit', compact('post'));
+        return view('admin.posts.edit', compact('post'));
     }
 
     public function update(Request $request, Post $post) {
@@ -33,7 +33,7 @@ class PostController extends Controller
                 ]);
 
          $post->update($request->all());
-         return redirect()->route('posts.show', $post->id);
+         return redirect()->route('admin.posts.show', $post->id);
     }
 
     public function store(Request $request) {
@@ -43,15 +43,15 @@ class PostController extends Controller
                 ]);
 
         Post::create($request->all());
-        return redirect()->route('posts.index');
+        return redirect()->route('admin.posts.index');
     }
 
     public function confirmDelete(Post $post) {
-        return view('posts.delete', compact('post'));
+        return view('admin.posts.delete', compact('post'));
     }
 
     public function destroy(Post $post) {
         $post->delete();
-        return redirect()->route('posts.index');
+        return redirect()->route('admin.posts.index');
     }
 }
