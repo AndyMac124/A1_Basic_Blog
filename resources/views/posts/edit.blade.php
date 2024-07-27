@@ -3,7 +3,7 @@
 @section('content')
     <h1>Edit Blog Post</h1>
     <a href="{{ url()->previous() }}" class="btn btn-outline-secondary">Back</a>
-    <form action="{{ route('posts.update', $post->id) }}" method="POST">
+    <form action="{{ route('admin.posts.update', $post->id) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="form-group">

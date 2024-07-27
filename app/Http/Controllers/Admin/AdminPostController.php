@@ -21,11 +21,11 @@ class AdminPostController extends Controller
     }
 
     public function show(Post $post) {
-        return view('admin.posts.showPost');
+        return view('admin.posts.showPost', compact('post'));
     }
 
     public function edit(Post $post) {
-        return view('admin.posts.editPost');
+        return view('admin.posts.editPost', compact('post'));
     }
 
     public function update(Request $request, Post $post) {
@@ -35,7 +35,7 @@ class AdminPostController extends Controller
                 ]);
 
          $post->update($request->all());
-         return redirect()->route('admin.posts.showPost', $post->id);
+         return redirect()->route('admin.posts.show', $post->id);
     }
 
     public function store(Request $request) {
@@ -48,10 +48,6 @@ class AdminPostController extends Controller
         return redirect()->route('admin.posts.index');
     }
 
-    public function confirmDelete(Post $post) {
-        return view('admin.posts.deletePost');
-    }
-
     public function destroy(Post $post) {
         $post->delete();
         return redirect()->route('admin.posts.listPosts');
@@ -59,7 +55,7 @@ class AdminPostController extends Controller
 
     public function viewPosts() {
         $posts = Post::all();
-        return view('admin.posts.listPosts');
+        return view('admin.posts.listPosts', compact('posts'));
     }
 
 }

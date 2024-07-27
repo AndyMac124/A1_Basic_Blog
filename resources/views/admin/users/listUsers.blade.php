@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-          <h2>Most Recent Registrations</h2>
+          <h2>All Registered Users</h2>
           <div class="table-responsive small">
             <table class="table table-striped table-sm">
               <thead>

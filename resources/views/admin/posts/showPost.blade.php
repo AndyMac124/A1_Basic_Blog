@@ -2,19 +2,14 @@
 
 @section('content')
     <h1>View Post</h1>
-    <form action="{{ route('posts.store') }}" method="POST">
-        @csrf
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" name="title" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="content">Content</label>
-            <textarea name="content" class="form-control" required></textarea>
-        </div>
-        <div class="d-flex">
-            <a href="{{ url()->previous() }}" class="btn btn-outline-secondary">Back</a>
-            <button type="submit" class="btn btn-outline-primary">Submit</button>
-        </div>
-    </form>
+    <h3 class="fw-medium">Title: {{ $post->title }}</h3>
+    <h4>Blog Post Author: {{ $post->author }}</h4>
+    <p><br>Content:<br> {{ $post->content}}</p>
+        <a href="{{ route('admin.posts.listPosts') }}" class="btn btn-outline-secondary">Back</a>
+        <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-outline-warning">Edit</a>
+        <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-outline-danger">Delete</button>
+                </form>
 @endsection
