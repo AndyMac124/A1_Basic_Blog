@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthorRegisterController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\AuthorMiddleware;
 use App\Http\Controllers\PostController;
@@ -29,6 +30,11 @@ Route::prefix('author')->middleware(['auth'])->group(function() {
     Route::get('/', [AuthorPostController::class, 'index'])->name('author.dashboard')->middleware(AuthorMiddleware::Class);
     Route::get('posts/view', [AuthorPostController::class, 'viewPosts'])->name('author.posts.listPosts')->middleware(AuthorMiddleware::class);
     Route::resource('posts', AuthorPostController::class, ['as' => 'author'])->middleware(AuthorMiddleware::Class);
+});
+
+Route::group(['middleware' => 'guest'], function() {
+    Route::get('/author/register', [AuthorRegisterController::class, 'authorRegistrationForm'])->name('author.register.form');
+    Route::post('/author/register', [AuthorRegisterController::class, 'register'])->name('author.register');
 });
 
 Auth::routes();
