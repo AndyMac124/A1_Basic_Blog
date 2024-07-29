@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <script src="{{ asset('js/color-modes.js') }}"></script>
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Fonts -->
+        <link rel="dns-prefetch" href="//fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+        <!-- Scripts -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
         <title>COSC360 A1 Basic Blog</title>
 
@@ -16,11 +26,11 @@
             }
             .enter {
                 font-size: 3rem;
-                background-color: white;
-                color: black;
+                background-color: transparent;
+                color: grey;
                 cursor: pointer;
                 padding: 12px;
-                border: 1px solid black;
+                border: 1px solid grey;
                 border-radius: 5px;
             }
             .enter:hover {

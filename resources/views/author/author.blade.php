@@ -4,6 +4,7 @@
     <script src="{{ asset('js/color-modes.js') }}"></script>
 
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
@@ -217,7 +218,7 @@
 </svg>
 
 <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">UNE Blog - Admin</a>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">UNE Blog - Author</a>
 
   <ul class="navbar-nav flex-row d-md-none">
     <li class="nav-item text-nowrap">
@@ -267,9 +268,28 @@
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="{{ route('posts.index') }}">
-                <svg class="bi"><use xlink:href="#door-closed"/></svg>
+                <svg class="bi"><use xlink:href="#chevron-right"/></svg>
                 Leave Dashboard
               </a>
+            </li>
+            @if (Auth::check() && Auth::user()->user_role == 'admin')
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-2" href="{{ route('admin.dashboard') }}">
+                        <svg class="bi"><use xlink:href="#list"/></svg>
+                        Admin Dashboard
+                    </a>
+                </li>
+            @endif
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-2" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                   <svg class="bi"><use xlink:href="#door-closed"/></svg>
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
             </li>
           </ul>
         </div>
