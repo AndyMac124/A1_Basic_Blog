@@ -79,6 +79,11 @@
                                             Admin Dashboard
                                         </a>
                                     @endif
+                                    @if (Auth::check() && Auth::user()->user_role == 'author' || Auth::user()->user_role == 'admin')
+                                        <a class="dropdown-item" href="{{ route('author.dashboard') }}">
+                                            Author Dashboard
+                                        </a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
