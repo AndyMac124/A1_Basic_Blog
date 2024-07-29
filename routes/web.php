@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AdminRegisterController;
 use App\Http\Controllers\Auth\AuthorRegisterController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\AuthorMiddleware;
@@ -35,6 +36,8 @@ Route::prefix('author')->middleware(['auth'])->group(function() {
 Route::group(['middleware' => 'guest'], function() {
     Route::get('/author/register', [AuthorRegisterController::class, 'authorRegistrationForm'])->name('author.register.form');
     Route::post('/author/register', [AuthorRegisterController::class, 'register'])->name('author.register');
+    Route::get('/admin/register', [AdminRegisterController::class, 'adminRegistrationForm'])->name('admin.register.form');
+    Route::post('/admin/register', [AdminRegisterController::class, 'register'])->name('admin.register');
 });
 
 Auth::routes();

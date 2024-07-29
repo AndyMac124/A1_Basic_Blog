@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
-class AuthorRegisterController extends Controller
+class AdminRegisterController extends Controller
 {
 
         use RegistersUsers;
@@ -19,7 +19,7 @@ class AuthorRegisterController extends Controller
          *
          * @var string
          */
-        protected $redirectTo = '/author';
+        protected $redirectTo = '/admin';
 
         /**
          * Create a new controller instance.
@@ -58,11 +58,11 @@ class AuthorRegisterController extends Controller
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
-                'user_role' => 'author',
+                'user_role' => 'admin',
             ]);
         }
 
-        public function authorRegistrationForm() {
-            return view('auth.authorRegister');
+        public function adminRegistrationForm() {
+            return view('auth.adminRegister');
         }
 }
