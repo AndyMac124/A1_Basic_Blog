@@ -13,8 +13,8 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::resource('posts', PostController::class);
-    Route::get('posts/{post}/delete', [PostController::class, 'confirmDelete'])->name('posts.delete');
+    Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+    Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
     Route::get('/home', [PostController::class, 'index'])->name('home');
 });
 

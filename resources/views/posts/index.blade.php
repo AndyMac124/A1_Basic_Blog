@@ -2,7 +2,6 @@
 
 @section('content')
     <h1>Blog Posts</h1>
-    <a href="{{ route('posts.create') }}" class="btn btn-outline-success">Create Post</a>
     <ul>
         @if(is_null($posts))
             <p>Currently no posts to show.<p>

@@ -21,6 +21,9 @@ class AuthorPostController extends Controller
         }
 
         public function show(Post $post) {
+            if (Auth::id() != $post->user_id) {
+                        abort(403);
+            }
             return view('author.posts.showPost', compact('post'));
         }
 
