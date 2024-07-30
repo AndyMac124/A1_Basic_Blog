@@ -201,6 +201,9 @@
   <symbol id="people" viewBox="0 0 16 16">
     <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>
   </symbol>
+  <symbol id="person" viewBox="0 0 16 16">
+    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8 9a5.978 5.978 0 0 0-4.528 2.032C2.88 11.926 2 12.87 2 14v1h12v-1c0-1.13-.88-2.074-1.472-2.968A5.978 5.978 0 0 0 8 9z"/>
+  </symbol>
   <symbol id="addPerson" viewBox="0 0 16 16">
       <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8 9a5.978 5.978 0 0 0-4.528 2.032C2.88 11.926 2 12.87 2 14v1h12v-1c0-1.13-.88-2.074-1.472-2.968A5.978 5.978 0 0 0 8 9z"/>
       <path d="M13.5 3a.5.5 0 0 1 .5.5v1.5h1.5a.5.5 0 0 1 0 1h-1.5v1.5a.5.5 0 0 1-1 0v-1.5h-1.5a.5.5 0 0 1 0-1h1.5V3.5a.5.5 0 0 1 .5-.5z"/>
@@ -218,7 +221,7 @@
 </svg>
 
 <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">UNE Blog - Author</a>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">UNE Blog - Author</a>
 
   <ul class="navbar-nav flex-row d-md-none">
     <li class="nav-item text-nowrap">
@@ -249,9 +252,15 @@
         <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="{{ route('author.dashboard') }}">
+              <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="{{ route('author.dashboard') }}">
                 <svg class="bi"><use xlink:href="#house-fill"/></svg>
                 Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('author.editAccount') }}">
+                  <svg class="bi"><use xlink:href="#person"/></svg>
+                  Update Account
               </a>
             </li>
             <li class="nav-item">

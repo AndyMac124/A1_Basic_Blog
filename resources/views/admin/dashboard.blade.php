@@ -9,6 +9,9 @@
 
 @section('content')
           <h2>Most Recent Registrations</h2>
+          <div>
+              <p><i>Click on a user name to view, edit, or delete</i></p>
+          </div>
           <div class="table-responsive small">
             <table class="table table-striped table-sm">
               <thead>
@@ -35,6 +38,9 @@
           </div>
 
         <h2>Most Recent Blog Posts</h2>
+        <div>
+            <p><i>Click on a blog title to view, edit, or delete</i></p>
+        </div>
         <div class="table-responsive small">
           <table class="table table-striped table-sm">
             <thead>

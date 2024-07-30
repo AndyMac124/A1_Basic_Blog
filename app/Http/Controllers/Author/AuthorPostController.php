@@ -51,8 +51,31 @@ class AuthorPostController extends Controller
             return redirect()->route('author.posts.index');
         }
 
+        // Update account
+        public function updateUser(Request $request) {
+            $user = Auth::user();
+            $request->validate([
+                'name' => 'required',
+                'email' => 'required',
+                'password' => 'nullable|min:8',
+            ]);
+
+            if (!($request->filled('password'))) {
+                $user->update($request->only(['name', 'email']));
+            } else {
+                $user->update($request->all());
+            }
+
+            return redirect()->route('author.dashboard');
+        }
+
         public function confirmDelete(Post $post) {
             return view('author.posts.delete', compact('post'));
+        }
+
+        public function updateDetails() {
+            $user = Auth::user();
+            return view('author.editAccount', compact('user'));
         }
 
         public function destroy(Post $post) {

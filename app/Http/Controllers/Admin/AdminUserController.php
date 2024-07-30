@@ -38,7 +38,12 @@ class AdminUserController extends Controller
             'user_role' => 'required|in:admin,author,user',
         ]);
 
-        $user->update($request->all());
+        if (!($request->filled('password'))) {
+            $user->update($request->only(['name', 'email', 'user_role']));
+        } else {
+            $user->update($request->all());
+        }
+
         return redirect()->route('admin.users.index');
     }
 

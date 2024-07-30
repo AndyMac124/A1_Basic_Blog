@@ -2,6 +2,7 @@
 
 @section('content')
         <h2>Your Most Recent Blog Posts</h2>
+        <p><i>Click on a blog title to view, edit, or delete</i></p>
         <div class="table-responsive small">
           <table class="table table-striped table-sm">
             <thead>

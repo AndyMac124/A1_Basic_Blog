@@ -32,6 +32,8 @@ Route::prefix('author')->middleware(['auth'])->group(function() {
     Route::get('/', [AuthorPostController::class, 'index'])->name('author.dashboard')->middleware(AuthorMiddleware::Class);
     Route::get('posts/view', [AuthorPostController::class, 'viewPosts'])->name('author.posts.listPosts')->middleware(AuthorMiddleware::class);
     Route::get('posts/{post}/delete', [AuthorPostController::class, 'confirmDelete'])->name('author.posts.delete');
+    Route::get('editAccount', [AuthorPostController::class, 'updateDetails'])->name('author.editAccount')->middleware(AuthorMiddleware::class);
+    Route::put('/author/updateUser', [AuthorPostController::class, 'updateUser'])->name('author.updateUser');
     Route::resource('posts', AuthorPostController::class, ['as' => 'author'])->middleware(AuthorMiddleware::Class);
 });
 
