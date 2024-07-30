@@ -7,9 +7,5 @@
     <p><br>Content:<br> {{ $post->content}}</p>
         <a href="{{ route('admin.posts.listPosts') }}" class="btn btn-outline-secondary">Back</a>
         <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-outline-warning">Edit</a>
-        <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-outline-danger">Delete</button>
-                </form>
+        <a href="{{ route('admin.posts.delete', $post->id) }}" class="btn btn-outline-danger">Delete</a>
 @endsection

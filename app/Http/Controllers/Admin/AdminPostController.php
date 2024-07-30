@@ -48,6 +48,10 @@ class AdminPostController extends Controller
         return redirect()->route('admin.posts.index');
     }
 
+    public function confirmDelete(Post $post) {
+        return view('admin.posts.delete', compact('post'));
+    }
+
     public function destroy(Post $post) {
         $post->delete();
         return redirect()->route('admin.posts.listPosts');

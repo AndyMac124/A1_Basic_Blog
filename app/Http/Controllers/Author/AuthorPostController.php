@@ -51,6 +51,10 @@ class AuthorPostController extends Controller
             return redirect()->route('author.posts.index');
         }
 
+        public function confirmDelete(Post $post) {
+            return view('author.posts.delete', compact('post'));
+        }
+
         public function destroy(Post $post) {
             $post->delete();
             return redirect()->route('author.posts.listPosts');
