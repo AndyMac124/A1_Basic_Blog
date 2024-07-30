@@ -14,9 +14,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(3)
-        ->has(Post::factory(3))
-        ->create();
+       User::factory()
+           ->count(7)
+           ->sequence(
+               ['user_role' => 'user'],
+               ['user_role' => 'user'],
+               ['user_role' => 'author'],
+               ['user_role' => 'author'],
+               ['user_role' => 'author'],
+               ['user_role' => 'admin'],
+               ['user_role' => 'admin']
+           )
+           ->has(Post::factory(3))
+           ->create();
 
         //User::factory()->create([
         //    'name' => 'Test User',
