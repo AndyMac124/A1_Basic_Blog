@@ -25,13 +25,9 @@ class DatabaseSeeder extends Seeder
                ['user_role' => 'admin'],
                ['user_role' => 'admin']
            )
-           ->has(Post::factory(3))
+           ->has(Post::factory(3)->state(function (array $attributes, User $user) {
+               return ['author' => $user->name];
+           }))
            ->create();
-
-        //User::factory()->create([
-        //    'name' => 'Test User',
-        //    'email' => 'test@example.com',
-        //]);
-        //$this->call(PostSeeder::class);
     }
 }
