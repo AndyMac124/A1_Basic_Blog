@@ -26,8 +26,8 @@
             </select>
         </div>
         <div class="d-flex">
-            <a href="{{ url()->previous() }}" class="btn btn-outline-secondary">Back</a>
-            <button type="submit" class="btn btn-outline-primary">Confirm</button>
+            <a href="{{ url()->previous() }}" class="btn btn-outline-secondary m-2 mt-3">Back</a>
+            <button type="submit" class="btn btn-outline-primary m-2 mt-3">Confirm</button>
         </div>
     </form>
 @endsection

@@ -9,11 +9,11 @@
         <p><br>Content:<br> {{ $post->content }}</p>
     </div>
     <div class="d-flex">
-        <a href="{{ route('author.posts.show', ['post' => $post->_id]) }}" class="btn btn-outline-secondary">Cancel</a>
+        <a href="{{ route('author.posts.show', ['post' => $post->_id]) }}" class="btn btn-outline-secondary mx-2">Cancel</a>
         <form action="{{ route('author.posts.destroy', $post->id) }}" method="POST">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-outline-danger">Delete</button>
+            <button type="submit" class="btn btn-outline-danger mx-2">Delete</button>
         </form>
     </div>
 

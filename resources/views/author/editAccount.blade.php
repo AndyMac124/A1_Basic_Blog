@@ -15,11 +15,14 @@
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" class="form-control" placeholder="Leave this blank to not change">
+            <input type="password" name="password" class="form-control" placeholder="To keep your current password, leave this blank.">
+            <div id="passwordHelpBlock" class="form-text m-2 mb-4">
+              Your password must be at least 8 characters long.
+            </div>
         </div>
         <div class="d-flex">
-            <a href="{{ url()->previous() }}" class="btn btn-outline-secondary">Back</a>
-            <button type="submit" class="btn btn-outline-primary">Confirm</button>
+            <a href="{{ url()->previous() }}" class="btn btn-outline-secondary mx-2">Back</a>
+            <button type="submit" class="btn btn-outline-primary mx-2">Confirm</button>
         </div>
     </form>
 @endsection

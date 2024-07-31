@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Base Blog Template</title>
+    <title>UNE Blog</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -20,12 +20,12 @@
 
     <!-- Modified Styles -->
     <style>
-        h1, h2, h3, h4 {
+        h1, h2, h3, h4, p {
             text-align: center;
         }
-        h1 {
-            margin: 15px;
-            margin-bottom: 25px;
+        h1, h2 {
+            margin: 1rem;
+            margin-bottom: 2rem;
         }
         h4 {
             font-size: 1.2rem;

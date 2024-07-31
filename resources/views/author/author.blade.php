@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>Admin Dashboard</title>
+    <title>UNE Blog - Author</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
 
@@ -94,6 +94,17 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
+
+        h1, h2, h3, h4 {
+            text-align: center;
+        }
+        h1, h2 {
+            margin: 1rem;
+            margin-bottom: 2rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
     </style>
 
 
@@ -257,11 +268,6 @@
                 Dashboard
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('author.editAccount') }}">
-                  <svg class="bi"><use xlink:href="#person"/></svg>
-                  Update Account
-              </a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="{{ route('author.posts.listPosts') }}">
@@ -276,11 +282,10 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('posts.index') }}">
-                <svg class="bi"><use xlink:href="#chevron-right"/></svg>
-                Leave Dashboard
+              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('author.editAccount') }}">
+                  <svg class="bi"><use xlink:href="#person"/></svg>
+                  Update Account
               </a>
-            </li>
             @if (Auth::check() && Auth::user()->user_role == 'admin')
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center gap-2" href="{{ route('admin.dashboard') }}">
@@ -289,6 +294,12 @@
                     </a>
                 </li>
             @endif
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('posts.index') }}">
+                <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+                Leave Dashboard
+              </a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link d-flex align-items-center gap-2" href="{{ route('logout') }}"
                    onclick="event.preventDefault();

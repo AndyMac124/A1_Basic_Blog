@@ -13,8 +13,8 @@
             <textarea name="content" class="form-control" required></textarea>
         </div>
         <div class="d-flex">
-            <a href="{{ url()->previous() }}" class="btn btn-outline-secondary">Back</a>
-            <button type="submit" class="btn btn-outline-primary">Submit</button>
+            <a href="{{ url()->previous() }}" class="btn btn-outline-secondary m-2">Back</a>
+            <button type="submit" class="btn btn-outline-primary m-2">Submit</button>
         </div>
     </form>
 @endsection

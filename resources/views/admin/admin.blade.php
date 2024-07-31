@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>Admin Dashboard</title>
+    <title>UNE Blog - Admin</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
 
@@ -93,6 +93,17 @@
 
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
+      }
+
+      h1, h2, h3, h4 {
+          text-align: center;
+      }
+      h1, h2 {
+          margin: 1rem;
+          margin-bottom: 2rem;
+      }
+      h4 {
+          font-size: 1.2rem;
       }
     </style>
 
@@ -250,15 +261,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('admin.users.create') }}">
-                <svg class="bi"><use xlink:href="#addPerson"/></svg>
-                Add New User
-              </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="{{ route('admin.posts.listPosts') }}">
                 <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
                 View all Posts
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('admin.users.create') }}">
+                <svg class="bi"><use xlink:href="#addPerson"/></svg>
+                Add New User
               </a>
             </li>
             <li class="nav-item">
@@ -268,16 +279,16 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('posts.index') }}">
-                <svg class="bi"><use xlink:href="#list"/></svg>
-                Leave Dashboard
-              </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link d-flex align-items-center gap-2" href="{{ route('author.dashboard') }}">
                     <svg class="bi"><use xlink:href="#chevron-right"/></svg>
                     Author Dashboard
                 </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('posts.index') }}">
+                <svg class="bi"><use xlink:href="#list"/></svg>
+                Leave Dashboard
+              </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link d-flex align-items-center gap-2" href="{{ route('logout') }}"

@@ -1,18 +1,11 @@
 @extends('admin.admin')
 
-@section('actionLink')
-    <a class="nav-link d-flex align-items-center gap-2" href="{{ route('admin.posts.create') }}">
-        <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
-        Create
-    </a>
-@endsection
-
 @section('content')
           <h2>Most Recent Registrations</h2>
           <div>
               <p><i>Click on a user name to view, edit, or delete</i></p>
           </div>
-          <div class="table-responsive small">
+          <div class="table-responsive small pb-4">
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
@@ -36,7 +29,6 @@
               </tbody>
             </table>
           </div>
-
         <h2>Most Recent Blog Posts</h2>
         <div>
             <p><i>Click on a blog title to view, edit, or delete</i></p>
