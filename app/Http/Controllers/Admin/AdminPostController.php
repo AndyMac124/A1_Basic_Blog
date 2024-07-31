@@ -39,12 +39,18 @@ class AdminPostController extends Controller
     }
 
     public function store(Request $request) {
+        $user = Auth::user();
         $request->validate([
                     'title' => 'required',
                     'content' => 'required',
                 ]);
 
-        Post::create($request->all());
+        Post::create([
+          'title' => $request->input('title'),
+          'content' => $request->input('content'),
+          'author' => $user->name,
+        ]);
+
         return redirect()->route('admin.posts.index');
     }
 
