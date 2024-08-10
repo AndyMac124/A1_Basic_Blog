@@ -1,4 +1,4 @@
-@extends('author.author')
+@extends('layouts.author_layout')
 
 @section('content')
         <h2 class="mb-4">Your Most Recent Blog Posts</h2>

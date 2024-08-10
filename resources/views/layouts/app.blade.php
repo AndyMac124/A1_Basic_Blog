@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <script src="{{ asset('js/color-modes.js') }}"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,7 +15,8 @@
 
     <!-- Scripts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <!-- Modified Styles -->
     <style>
@@ -43,17 +43,16 @@
         }
 
         [data-bs-theme="light"] {
-                a, .nav-link{
+                .link, .nav-link, .navbar-brand{
                     color: #0243b3;
                 }
-                a:hover, .nav-link:hover, .navbar-brand:hover, .nav-link:hover, .dropdown-item:hover{
-                    color: #062e73;
+                .link:hover, .nav-link:hover, .navbar-brand:hover, .nav-link:hover, .dropdown-item:hover{
+                    color: #4287fa;
                 }
         }
-
-
     </style>
 </head>
+
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm">
@@ -124,10 +123,6 @@
             @yield('content')
         </main>
     </div>
-    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/dashboard.js') }}"></script>
 </body>
 
 </html>

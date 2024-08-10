@@ -1,4 +1,4 @@
-@extends('admin.admin')
+@extends('layouts.admin_layout')
 
 @section('actionLink')
     <a class="nav-link d-flex align-items-center gap-2" href="{{ route('admin.posts.create') }}">

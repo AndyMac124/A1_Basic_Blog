@@ -1,4 +1,4 @@
-@extends('author.author')
+@extends('layouts.author_layout')
 
 @section('content')
     <h1>Create New Blog Post</h1>
