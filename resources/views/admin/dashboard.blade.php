@@ -19,7 +19,7 @@
               <tbody>
                   @foreach ($recentUsers as $index => $user)
                     <tr>
-                        <td><a href="{{ route('admin.users.show', ['user' => $user->_id]) }}">{{ $user->name }}</td>
+                        <td><a class="link" href="{{ route('admin.users.show', ['user' => $user->_id]) }}">{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->user_role }}</td>
                         <td>{{ $user->updated_at->format('Y-m-d H:i:s') }}</td>
@@ -46,7 +46,7 @@
             <tbody>
                 @foreach ($recentPosts as $index => $post)
                   <tr>
-                      <td><a href="{{ route('admin.posts.show', ['post' => $post->_id]) }}">{{ $post->title }}</a></td>
+                      <td><a class="link" href="{{ route('admin.posts.show', ['post' => $post->_id]) }}">{{ $post->title }}</a></td>
                       <td>{{ $post->author }}</td>
                       <td>{{ $post->updated_at->format('Y-m-d H:i:s') }}</td>
                       <td>{{ $post->created_at->format('Y-m-d H:i:s') }}</td>

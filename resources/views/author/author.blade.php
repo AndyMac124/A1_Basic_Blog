@@ -105,6 +105,23 @@
         h4 {
             font-size: 1.2rem;
         }
+        [data-bs-theme="dark"] {
+                .link, .nav-link{
+                    color: #7ea9f2;
+                }
+                .link:hover, .nav-link:hover, .navbar-brand:hover, .nav-link:hover, .dropdown-item:hover{
+                    color: #efe98f;
+                }
+        }
+
+        [data-bs-theme="light"] {
+                .link, .nav-link{
+                    color: #0243b3;
+                }
+                .link:hover, .nav-link:hover, .navbar-brand:hover, .nav-link:hover, .dropdown-item:hover{
+                    color: #062e73;
+                }
+        }
     </style>
 
 
@@ -232,7 +249,7 @@
 </svg>
 
 <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">UNE Blog - Author</a>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 link" href="#">UNE Blog - Author</a>
 
   <ul class="navbar-nav flex-row d-md-none">
     <li class="nav-item text-nowrap">
@@ -263,45 +280,45 @@
         <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="{{ route('author.dashboard') }}">
+              <a class="nav-link d-flex align-items-center gap-2 link" aria-current="page" href="{{ route('author.dashboard') }}">
                 <svg class="bi"><use xlink:href="#house-fill"/></svg>
                 Dashboard
               </a>
             </li>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('author.posts.listPosts') }}">
+              <a class="nav-link d-flex align-items-center gap-2 link" href="{{ route('author.posts.listPosts') }}">
                 <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
                 View all Posts
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('author.posts.create') }}">
+              <a class="nav-link d-flex align-items-center gap-2 link" href="{{ route('author.posts.create') }}">
                 <svg class="bi"><use xlink:href="#file-earmark"/></svg>
                 Create New Post
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('author.editAccount') }}">
+              <a class="nav-link d-flex align-items-center gap-2 link" href="{{ route('author.editAccount') }}">
                   <svg class="bi"><use xlink:href="#person"/></svg>
                   Update Account
               </a>
             @if (Auth::check() && Auth::user()->user_role == 'admin')
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="{{ route('admin.dashboard') }}">
+                    <a class="nav-link d-flex align-items-center gap-2 link" href="{{ route('admin.dashboard') }}">
                         <svg class="bi"><use xlink:href="#list"/></svg>
                         Admin Dashboard
                     </a>
                 </li>
             @endif
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('posts.index') }}">
+              <a class="nav-link d-flex align-items-center gap-2 link" href="{{ route('posts.index') }}">
                 <svg class="bi"><use xlink:href="#chevron-right"/></svg>
                 Leave Dashboard
               </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link d-flex align-items-center gap-2" href="{{ route('logout') }}"
+                <a class="nav-link d-flex align-items-center gap-2 link" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                  document.getElementById('logout-form').submit();">
                    <svg class="bi"><use xlink:href="#door-closed"/></svg>

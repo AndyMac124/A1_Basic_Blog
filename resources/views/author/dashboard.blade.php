@@ -15,7 +15,7 @@
             <tbody>
                 @foreach ($posts as $index => $post)
                   <tr>
-                      <td><a href="{{ route('author.posts.show', ['post' => $post->_id]) }}">{{ $post->title }}</a></td>
+                      <td><a class="link" href="{{ route('author.posts.show', ['post' => $post->_id]) }}">{{ $post->title }}</a></td>
                       <td>{{ $post->updated_at->format('Y-m-d H:i:s') }}</td>
                       <td>{{ $post->created_at->format('Y-m-d H:i:s') }}</td>
                   </tr>

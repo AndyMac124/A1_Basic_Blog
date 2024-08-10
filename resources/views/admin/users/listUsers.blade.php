@@ -23,7 +23,7 @@
               <tbody>
                   @foreach ($users as $index => $user)
                     <tr>
-                        <td><a href="{{ route('admin.users.show', ['user' => $user->_id]) }}">{{ $user->name }}</a></td>
+                        <td><a class="link" href="{{ route('admin.users.show', ['user' => $user->_id]) }}">{{ $user->name }}</a></td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->user_role }}</td>
                         <td>{{ $user->updated_at->format('Y-m-d H:i:s') }}</td>

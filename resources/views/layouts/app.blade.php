@@ -33,6 +33,25 @@
         .btn {
             margin: 5px;
         }
+        [data-bs-theme="dark"] {
+                a, .nav-link{
+                    color: #7ea9f2;
+                }
+                a:hover, .nav-link:hover, .navbar-brand:hover, .nav-link:hover, .dropdown-item:hover{
+                    color: #efe98f;
+                }
+        }
+
+        [data-bs-theme="light"] {
+                a, .nav-link{
+                    color: #0243b3;
+                }
+                a:hover, .nav-link:hover, .navbar-brand:hover, .nav-link:hover, .dropdown-item:hover{
+                    color: #062e73;
+                }
+        }
+
+
     </style>
 </head>
 <body>
@@ -69,22 +88,22 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     @if (Auth::check() && Auth::user()->user_role == 'admin')
-                                        <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
+                                        <a class="dropdown-item link" href="{{ route('admin.dashboard') }}">
                                             Admin Dashboard
                                         </a>
                                     @endif
                                     @if (Auth::check() && Auth::user()->user_role == 'author' || Auth::user()->user_role == 'admin')
-                                        <a class="dropdown-item" href="{{ route('author.dashboard') }}">
+                                        <a class="dropdown-item link" href="{{ route('author.dashboard') }}">
                                             Author Dashboard
                                         </a>
                                     @endif
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item link" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
