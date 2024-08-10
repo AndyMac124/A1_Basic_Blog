@@ -20,35 +20,14 @@
 
     <!-- Modified Styles -->
     <style>
-        h1, h2, h3, h4, p {
+        p {
             text-align: center;
-        }
-        h1, h2 {
-            margin: 1rem;
-            margin-bottom: 2rem;
         }
         h4 {
             font-size: 1.2rem;
         }
         .btn {
             margin: 5px;
-        }
-        [data-bs-theme="dark"] {
-                a, .nav-link{
-                    color: #7ea9f2;
-                }
-                a:hover, .nav-link:hover, .navbar-brand:hover, .nav-link:hover, .dropdown-item:hover{
-                    color: #efe98f;
-                }
-        }
-
-        [data-bs-theme="light"] {
-                .link, .nav-link, .navbar-brand{
-                    color: #0243b3;
-                }
-                .link:hover, .nav-link:hover, .navbar-brand:hover, .nav-link:hover, .dropdown-item:hover{
-                    color: #4287fa;
-                }
         }
     </style>
 </head>
