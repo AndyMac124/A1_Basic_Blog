@@ -14,12 +14,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/* Frontend routes */
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
     Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
     Route::get('/home', [PostController::class, 'index'])->name('home');
 });
 
+/* Admin routes */
 Route::prefix('admin')->middleware(['auth'])->group(function() {
     Route::get('/', [AdminPostController::class, 'index'])->name('admin.dashboard')->middleware(AdminMiddleware::Class);
     Route::get('posts/view', [AdminPostController::class, 'viewPosts'])->name('admin.posts.listPosts')->middleware(AdminMiddleware::class);
@@ -28,6 +30,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function() {
     Route::resource('users', AdminUserController::class, ['as' => 'admin'])->middleware(AdminMiddleware::Class);
 });
 
+/* Author routes */
 Route::prefix('author')->middleware(['auth'])->group(function() {
     Route::get('/', [AuthorPostController::class, 'index'])->name('author.dashboard')->middleware(AuthorMiddleware::Class);
     Route::get('posts/view', [AuthorPostController::class, 'viewPosts'])->name('author.posts.listPosts')->middleware(AuthorMiddleware::class);
@@ -37,6 +40,7 @@ Route::prefix('author')->middleware(['auth'])->group(function() {
     Route::resource('posts', AuthorPostController::class, ['as' => 'author'])->middleware(AuthorMiddleware::Class);
 });
 
+/* Author/Admin Registration routes */
 Route::group(['middleware' => 'guest'], function() {
     Route::get('/author/register', [AuthorRegisterController::class, 'authorRegistrationForm'])->name('author.register.form');
     Route::post('/author/register', [AuthorRegisterController::class, 'register'])->name('author.register');

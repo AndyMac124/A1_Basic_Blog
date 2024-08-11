@@ -22,8 +22,8 @@
 Optional: run `php artisan db:seed` to create 2 Admins, 3 Authors, and 2 Users with 3 posts each.
 
 **Routes for Admin and Authors:**
-- Create Admin account: `<base_url>/admin/regiter`
-- Create Author account: `<base_url>/author/regiter`
+- Register Admin account: `<base_url>/admin/regiter`
+- Register Author account: `<base_url>/author/regiter`
 - Login: `<base_url>/login`
 <br>*Note* I have left a single login route for all roles, once logged in they will have the ability to switch between any
 role they have permission for such as 'view admin dashboard', 'view author dashboard', or 'leave dashboard' to view the 
@@ -34,14 +34,15 @@ standard front end
 ## Report
 
 ### Approach:
-My approach was to create the dashboard from the bootstrap template and have the same dashboard view for authors and admins.
-From the main frontend they can select to view author and/or admin dashboard from the right hand drop down (where logout is located).
-Once inside the dashboard they can switch between author and admin dashboards (if permitted) and they can also 'leave dashboard' to
-return to the main frontend.
+My approach was to create the dashboard from the bootstrap template and have the same dashboard view for Authors and Admins.
+From the main frontend they can select to view Author and/or Admin dashboards from the right hand drop down (where logout is located).
+Once inside the dashboard they can switch between author and admin dashboards (if permitted to do so) and they can also 'leave dashboard' to
+return to the main frontend. I have left the dark/light modes active, and modified the colour palette. The main Dashboard 
+shows the 10 most recent posts (and 10 most recent user registrations to Admins) with a range of options on the right hand column.
 
 ### Challenges Faced:
-My main challenge was that in trying to optimise the CSS and JS files I broke the light/dark mode button and ended up reverting
-to a previous commit and starting again but with a lot more caution. Another challenge was after refactoring all of the scripts in the 
+My main challenge was when trying to optimise the CSS and JS files I broke the light/dark mode button and ended up reverting
+to a previous commit and starting again but with a lot more caution. Another challenge was after refactoring all the scripts in the 
 dashboard template into the app.scss and app.js files I had performance reduction in the web page and had to work on making sure the
 order of the links were correct to maintain performance.
 
