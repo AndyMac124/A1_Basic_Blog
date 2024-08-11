@@ -15,15 +15,15 @@
 4. Run `npm install`.
 5. Run `composer install`.
 6. I also recommend running `php artisan migrate` to confirm the migration.
-7. Start your database and server of choice.
+7. Start your database and server of chogitice.
 8. Run `npm run dev`.
 9. Run `php artisan serve`.
 
 Optional: run `php artisan db:seed` to create 2 Admins, 3 Authors, and 2 Users with 3 posts each.
 
 **Routes for Admin and Authors:**
-- Register Admin account: `<base_url>/admin/regiter`
-- Register Author account: `<base_url>/author/regiter`
+- Register Admin account: `<base_url>/admin/register`
+- Register Author account: `<base_url>/author/register`
 - Login: `<base_url>/login`
 <br>*Note* I have left a single login route for all roles, once logged in they will have the ability to switch between any
 role they have permission for such as 'view admin dashboard', 'view author dashboard', or 'leave dashboard' to view the 
