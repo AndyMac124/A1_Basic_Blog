@@ -16,6 +16,8 @@
 
         <title>COSC360 A1 Basic Blog</title>
 
+        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
         <!-- Styles -->
         <style>
             body {
