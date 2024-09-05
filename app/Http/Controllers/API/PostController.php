@@ -15,4 +15,19 @@ class PostController extends Controller
             'message' => 'success',
         ], 200);
     }
+
+    public function show($id) {
+        $post = Post::find($id);
+
+        if (!$post) {
+            return response()->json([
+                'message' => 'Failed, no post with ' . $id . ' found',
+            ], 404);
+        }
+
+        return response()->json ([
+            'data' => $post,
+            'message' => 'success',
+        ], 200);
+    }
 }
