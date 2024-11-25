@@ -1,10 +1,5 @@
-# COSC360 A2 - Blog with Admin Dashboard
-
-### GitHub Repository: https://github.com/AndyMac124/A1_Basic_Blog/tree/feature/auth-admin-panel
-
+# Blog with Admin Dashboard
 #### Author: Andrew McKenzie
-#### Email: amcken33@myune.edu.au  
-#### Student ID: 220263507
 
 ---
 
@@ -40,13 +35,6 @@ Once inside the dashboard they can switch between author and admin dashboards (i
 return to the main frontend. I have left the dark/light modes active, and modified the colour palette. The main Dashboard 
 shows the 10 most recent posts (and 10 most recent user registrations to Admins) with a range of options on the right hand column.
 
-### Challenges Faced:
-My main challenge was when trying to optimise the CSS and JS files I broke the light/dark mode button and ended up reverting
-to a previous commit and starting again but with a lot more caution. Another challenge was after refactoring all the scripts in the 
-dashboard template into the app.scss and app.js files I had performance reduction in the web page and had to work on making sure the
-order of the links were correct to maintain performance.
-
-### Bonus Marks:
 Middleware has been created for admin access and applied to admin routes:
 
 ```php
